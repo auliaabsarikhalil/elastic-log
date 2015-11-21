@@ -1,0 +1,22 @@
+{
+  "name": "elastic-log",
+  "version": "1.0.0",
+  "description": "Sample Code for integrate data with Elastic Search using NodeJs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script/register"
+  },
+  "keywords": [
+    "elasticsearch"
+  ],
+  "author": "Aulia-Absari Khalil <auliaabsarikhalil@gmail.com> (https://github.com/auliaabsarikhalil)",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "elasticsearch": "^9.0.1",
+    "expect.js": "^0.3.1"
+  }
+}
