@@ -6,9 +6,7 @@ describe 'Elastic Integration', () ->
 	it 'should connect to elastic search', (done) ->
 
 		elastic.ping (err, response) ->
-
 			expect(err).to.eql(null)
-
 			done()
 
 	it 'check if index is exists', (done) ->
@@ -16,9 +14,7 @@ describe 'Elastic Integration', () ->
 		index = 'logs-test'
 
 		elastic.checkIndexExists index, (err, response) ->
-
 			expect(err).to.eql(null)
-
 			done()
 
 	it 'check if index is not exists', (done) ->
@@ -26,9 +22,7 @@ describe 'Elastic Integration', () ->
 		index = 'test-not-exists'
 
 		elastic.checkIndexExists index, (err, response) ->
-
 			expect(err).to.eql(null)
-
 			done()
 
 	it 'check if function checkIndexExists is error', (done) ->
@@ -36,61 +30,42 @@ describe 'Elastic Integration', () ->
 		index = null
 
 		elastic.checkIndexExists index, (err, response) ->
-
 			expect(response).to.eql(undefined)
-			
 			expect(response).to.not.eql(null)
-
 			done()
 
 	it 'check if type is exists', (done) ->
-
 		index = 'logs-test'
-
 		type = 'notification_center'
 
 		elastic.checkTypeExists index, type, (err, response) ->
-
 			expect(err).to.eql(null)
-
 			done()
 
 	it 'check if type is not exists', (done) ->
-
 		index = 'logs-test'
-
 		type = 'not_exists'
 
-		elastic.checkTypeExists index, type, (err, response) ->
-			
+		elastic.checkTypeExists index, type, (err, response) ->	
 			expect(err).to.eql(null)
-
 			done()
 
 	it 'check if function checkTypeExists is error', (done) ->
-
 		index = 'logs-test'
-
 		type = null
 
 		elastic.checkTypeExists index, type, (err, response) ->
-			
 			expect(response).to.eql(undefined)
-			
 			expect(err).to.not.eql(null)
-
 			done()
 
 	it 'check index and type', (done) ->
 
-		index = 'logs-test'
-
-		type = 'notification_center'
+		index 	= 'logs-test'
+		type 	= 'notification_center'
 
 		elastic.checkIndexAndType index, type, (err, response) ->
-			
 			expect(err).to.eql(null)
-
 			done()
 
 	it 'check if checkIndexAndType function is error', (done) ->
@@ -100,33 +75,27 @@ describe 'Elastic Integration', () ->
 		type = 'notification_center'
 
 		elastic.checkIndexAndType index, type, (err, response) ->
-			
 			expect(response).to.eql(undefined)
-			
 			expect(err).to.not.eql(null)
-
 			done()
 
 	it 'check create data to elastic search', (done) ->
 
-		status = ['success', 'error']
-
-		now = new Date()
-		
-		now = now.toISOString()
-		
-		index = Math.round(Math.random()*10%1)
+		status 	= ['success', 'error']
+		now 	= new Date()
+		now 	= now.toISOString()
+		index 	= Math.round(Math.random()*10%1)
 
 		msg =
-			response : message : "success"
 			status : status[index]
+			message : "status message"
 			origin : "notification_center"
 			type : "email"
 			request :
 				origin : "api"
 				type : "email"
 				target :
-					email : "alirezayahya@gmail.com"
+					email : "aulia@example.com"
 			date : now
 
 		data =
@@ -135,32 +104,26 @@ describe 'Elastic Integration', () ->
 			body : msg
 
 		elastic.createData data, (err, response) ->
-			
 			expect(err).to.eql(null)
-			
 			expect(response.created).to.eql(true)
-
 			done()
 
 	it 'check create data to elastic search if origin not defined', (done) ->
 
-		status = ['success', 'error']
-
-		now = new Date()
-		
-		now = now.toISOString()
-		
-		index = Math.round(Math.random()*10%1)
+		status 	= ['success', 'error']
+		now 	= new Date()
+		now 	= now.toISOString()
+		index 	= Math.round(Math.random()*10%1)
 
 		msg =
-			response : message : "success"
 			status : status[index]
+			message : "status message"
 			type : "email"
 			request :
 				origin : "api"
 				type : "email"
 				target :
-					email : "alirezayahya@gmail.com"
+					email : "aulia@example.com"
 			date : now
 
 		data =
@@ -169,26 +132,20 @@ describe 'Elastic Integration', () ->
 			body : msg
 
 		elastic.createData data, (err, response) ->
-			
 			expect(err).to.eql(null)
-			
 			expect(response.created).to.eql(true)
-
 			done()
 
 	it 'check if create data to elastic search error', (done) ->
 
-		status = ['success', 'error']
-
-		now = new Date()
-		
-		now = now.toISOString()
-		
-		index = Math.round(Math.random()*10%1)
+		status 	= ['success', 'error']
+		now 	= new Date()
+		now 	= now.toISOString()
+		index 	= Math.round(Math.random()*10%1)
 
 		msg =
-			response : message : "success"
 			status : status[index]
+			message : "status message"
 			origin : undefined
 			type : "email"
 			request :
@@ -204,9 +161,6 @@ describe 'Elastic Integration', () ->
 			body : msg
 
 		elastic.createData data, (err, response) ->
-
 			expect(err).to.not.eql(null)
-			
 			expect(response).to.eql(undefined)
-			
 			done()
