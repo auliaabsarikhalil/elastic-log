@@ -1,5 +1,5 @@
-module.exports =
-  elasticSearch:
-  	index : 'logs'
-  	host : "localhost:9200"
-  	log : 'trace'
+Settings  = require 'settings'
+env       = require './.env'
+config    = new Settings(require('./.msConfig'), { env : env })
+
+module.exports = config
