@@ -9,12 +9,10 @@ module.exports =
 		
 		properties =
 			properties :
-				response :
-					properties :
-						message :
-							type : "string"
 				status :
 					type : "string"
+				message:
+					type:"string"
 				origin :
 					type : "string"
 				request :
