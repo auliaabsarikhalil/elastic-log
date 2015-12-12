@@ -1,5 +1,5 @@
 ## Elastic Log
-Service for saving your log into Elastic Search and analyze with Kibana
+This is a Service for saving your log into elastic search and analyze it with Kibana
 
 ## Setup
 
@@ -31,7 +31,7 @@ You can run in Debug Mode : `DEBUG=elastic coffee index.coffee`
 ## How to use it
 1. [Start Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html)
 2. Run app : `coffee index.coffee`
-3. send data to 'YOUR_HOST:1503/send', data example:
+3. send data to `HOST:1503/send`, data example:
 
 ```json
 {
