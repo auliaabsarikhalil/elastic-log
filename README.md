@@ -1,5 +1,5 @@
 ## Elastic Log
-Service for saving your log to Elastic Search and analyze with Kibana
+Service for saving your log into Elastic Search and analyze with Kibana
 
 ## Setup
 
