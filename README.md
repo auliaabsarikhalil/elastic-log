@@ -44,7 +44,7 @@ You can run in Debug Mode : `DEBUG=elastic coffee index.coffee`
 
 ```
 
-## Params Glosary
+## Params Glossary
 | Params        | Type     | Description |
 | ------------- |:-------------:| ------------|
 | status | String | status of your executed action `success` or `error` |
