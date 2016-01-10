@@ -50,6 +50,7 @@ You can run in Debug Mode : `DEBUG=elastic coffee index.coffee`
 | status | String | status of your executed action `success` or `error` |
 | message | String | message from your executed action |
 | origin | String | From where this request was sent |
+| type | String | Type of your request, e.g: email, pushNotification, etc |
 | request | Object | Your full request data that send to this service |
 
 ## Analyze Data
