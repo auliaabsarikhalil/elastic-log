@@ -44,5 +44,13 @@ You can run in Debug Mode : `DEBUG=elastic coffee index.coffee`
 
 ```
 
+## Params Glosary
+| Params        | Type     | Description |
+| ------------- |:-------------:| ------------|
+| status | String | status of your executed action `success` or `error` |
+| message | String | message from your executed action |
+| origin | String | From where this request was sent |
+| request | Object | Your full request data that send to this service |
+
 ## Analyze Data
 You can analyze the data with [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html)
